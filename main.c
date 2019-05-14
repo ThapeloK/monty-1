@@ -38,7 +38,7 @@ void monty(void)
 			gl.line = line;
 			caller();
 		}
-		fclose (file);
+	       	fclose (file);
 	}
 	else
 	{
@@ -91,19 +91,20 @@ void push(stack_t **stack, unsigned int line_number)
 
 void pint(stack_t **stack, unsigned int line_number)
 {
-	char *param = strtok(NULL, " \n");
-	int n = atoi(param);
-	(void)line_number;
-
-	*stack = add_dnodeint(stack, n);
+	if (!*stack)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf(*stack-n);
 }
 
 
-void pall(stack_t **stack, unsigned int line_number)
-{
-	(void)line_number;
-	print_dlistint(*stack);
-}
+		void pall(stack_t **stack, unsigned int line_number)
+	{
+		(void)line_number;
+		print_dlistint(*stack);
+	}
 
 /**
  * add_dnodeint - adds a node at the beginning
@@ -111,15 +112,15 @@ void pall(stack_t **stack, unsigned int line_number)
  * @n: data of a node
  * Return: Doubly linked list
  */
-stack_t *add_dnodeint(stack_t **head, const int n)
-{
-	stack_t *new_node = NULL;
+		stack_t *add_dnodeint(stack_t **head, const int n)
+		{
+			stack_t *new_node = NULL;
 
-	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+			new_node = malloc(sizeof(stack_t));
+			if (!new_node)
+			{
+				fprintf(stderr, "Error: malloc failed\n");
+				exit(EXIT_FAILURE);
 	}
 	new_node->n = n;
 	new_node->prev = NULL;
