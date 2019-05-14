@@ -55,3 +55,8 @@ void caller(args_t *args)
 		{NULL, NULL}
 	};
 }
+
+void push(stack_t **stack, unsigned int line_number)
+{
+	
+}
