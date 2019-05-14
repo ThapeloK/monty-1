@@ -48,13 +48,21 @@ typedef struct arguments
 	int argc;
 	ssize_t counter;
 	char *line;
+	stack_t *stack;
 } args_t;
 
 
-void monty(args_t *); /*main.c*/
-void caller(args_t *args);
+void monty(void); /*main.c*/
+void caller(void);
+void push(stack_t **stack, unsigned int line_number);
+stack_t *add_dnodeint(stack_t **head, const int n);
+size_t print_dlistint(const stack_t *h);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+size_t stack_size(const stack_t *h);
+int check_string(char *s);
 
 /*    Global Variable, i.e. stack   */
-stack_t *global = NULL;
+args_t gl;
 
 #endif /*__MONTY__*/
