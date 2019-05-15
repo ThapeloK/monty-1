@@ -63,9 +63,9 @@ void free_dlistint(stack_t *head)
 
 
 /**
- * print_dlistint - prints doubly linked list
+ * stack_size - show how big stack
  * @h: doubly linked list
- * Return: Size of linked list
+ * Return: Size of stack
  */
 size_t stack_size(const stack_t *h)
 {
