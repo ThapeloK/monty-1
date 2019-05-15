@@ -18,8 +18,7 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(param);
-
-	 *stack = add_dnodeint(stack, n);
+	*stack = add_dnodeint(stack, n);
 }
 
 /**
@@ -35,7 +34,7 @@ void pop(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		cleaner();
 		exit(EXIT_FAILURE);
-			}
+	}
 	delete_dnodeint_at_index(stack, 0);
 }
 

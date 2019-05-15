@@ -21,7 +21,7 @@ void monty(void)
 	args.file = fopen(args.argv[1], "r");
 	if (args.file != NULL)
 	{
-		while (fgets(line, sizeof(args.line), args.file) != NULL)
+		while (fgets(line, sizeof(line), args.file) != NULL)
 		{
 			args.counter++;
 			args.line = line;
