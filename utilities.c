@@ -1,12 +1,14 @@
 #include "monty.h"
 
 /**
- * monty - monty
+ * monty - custom interpretor
+ * @args: the argument to be interpreted
+ *
  */
 void monty(args_t *args)
 {
 	FILE *file = fopen(args->argv[1], "r");
-	char line [128];
+	char line[128];
 
 	if (file != NULL)
 	{
