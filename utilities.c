@@ -12,13 +12,13 @@ void monty(args_t *args)
 
 	if (file != NULL)
 	{
-		while (fgets(line, sizeof line, file) != NULL)
+		while (fgets(line, sizeof(line), file) != NULL)
 		{
 			args->counter++;
 			args->line = line;
 			caller(args);
 		}
-	       	fclose (file);
+		fclose(file);
 	}
 	else
 	{
@@ -29,6 +29,7 @@ void monty(args_t *args)
 
 /**
  * caller - caller
+ * @args: arguments passed to function
  */
 void caller(args_t *args)
 {
@@ -51,12 +52,10 @@ void caller(args_t *args)
 	int i = 0;
 	char *op = NULL;
 
-	/* if (*(args->line) == ' ' || *(args->line) == '\n') */
-	/* 	return; */
 	op = strtok(args->line, " \n");
 	if (!op || *op == '#')
 		return;
-	while(ins[i].opcode && op)
+	while (ins[i].opcode && op)
 	{
 		if (!strcmp(op, ins[i].opcode))
 		{
