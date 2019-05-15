@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * add - adds the top two in stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void add(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack || !(*stack)->next)
