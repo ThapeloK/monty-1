@@ -63,7 +63,7 @@ void free_dlistint(stack_t *head)
 
 
 /**
- * stack_size - show how big stack
+ * stack_size - shows size of stack
  * @h: doubly linked list
  * Return: Size of stack
  */
