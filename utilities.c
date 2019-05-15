@@ -12,10 +12,9 @@ void cleaner(void)
 
 /**
  * monty - custom interpretor
- * @args: the argument to be interpreted
  *
  */
-void monty()
+void monty(void)
 {
 	char line[128];
 
@@ -40,9 +39,8 @@ void monty()
 
 /**
  * caller - caller
- * @args: arguments passed to function
  */
-void caller()
+void caller(void)
 {
 	instruction_t ins[] = {
 		{"push", push},
