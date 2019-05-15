@@ -37,6 +37,12 @@ void pop(stack_t **stack, unsigned int line_number)
 	delete_dnodeint_at_index(stack, 0);
 }
 
+/**
+ * swap - uses data from stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void swap(stack_t **stack, unsigned int line_number)
 {
 	int temp;
@@ -51,6 +57,12 @@ void swap(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = temp;
 }
 
+/**
+ * pop - uses LIFO to pull from stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void nop(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
