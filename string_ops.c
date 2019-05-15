@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * pint - prints out everything in stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack)
@@ -10,7 +16,11 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 
-
+/**
+ * check_string - verify if argument is alpha
+ * @s: string passed to function
+ *
+ */
 int check_string(char *s)
 {
 	int i = 0;
