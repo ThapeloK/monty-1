@@ -59,7 +59,12 @@ void pstr(stack_t **stack, unsigned int line_number)
 	}
 }
 
-
+/**
+ * pchar - prints character
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void pchar(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack)
