@@ -34,6 +34,12 @@ void sub(stack_t **stack, unsigned int line_number)
 	delete_dnodeint_at_index(stack, 0);
 }
 
+/**
+ * mul - find product of top 2 in stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void mul(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack || !(*stack)->next)
