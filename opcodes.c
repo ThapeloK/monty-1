@@ -58,7 +58,7 @@ void swap(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pop - uses LIFO to pull from stack
+ * nop - returns nothing from stack
  * @stack: doubly linked list
  * @line_number: the line
  *
