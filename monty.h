@@ -17,9 +17,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -32,18 +32,19 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
  * struct arguments - Values to be accessed by various functions
  * @argv: Name of the executable
- * @argc: argument count
+ * @counter: counts number of lines
+ * @line: input line
+ * @stack: doubly linked list
  */
 typedef struct arguments
 {
-	/* int count; */
 	char **argv;
 	ssize_t counter;
 	char *line;
@@ -51,7 +52,7 @@ typedef struct arguments
 } args_t;
 
 
-void monty(args_t *); /*main.c*/
+void monty(args_t *);
 void caller(args_t *);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
