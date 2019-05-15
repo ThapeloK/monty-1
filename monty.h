@@ -42,6 +42,7 @@ typedef struct instruction_s
  * @counter: counts number of lines
  * @line: input line
  * @stack: doubly linked list
+ * @file: file
  */
 typedef struct arguments
 {
@@ -49,11 +50,13 @@ typedef struct arguments
 	ssize_t counter;
 	char *line;
 	stack_t *stack;
+	FILE *file;
 } args_t;
 
 
-void monty(args_t *);
-void caller(args_t *);
+void monty(void);
+void caller(void);
+void cleaner(void);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
@@ -75,5 +78,7 @@ void free_dlistint(stack_t *head);
 size_t stack_size(const stack_t *h);
 int check_string(char *s);
 
+
+args_t args;
 
 #endif /*__MONTY__*/

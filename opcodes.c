@@ -14,7 +14,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (check_string(param) == -1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		free_dlistint(*stack);
+		cleaner();
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(param);
@@ -33,9 +33,9 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (!*stack)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-		free_dlistint(*stack);
+		cleaner();
 		exit(EXIT_FAILURE);
-	}
+			}
 	delete_dnodeint_at_index(stack, 0);
 }
 
@@ -52,7 +52,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
-		free_dlistint(*stack);
+		cleaner();
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->n;

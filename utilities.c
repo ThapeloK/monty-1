@@ -1,29 +1,39 @@
 #include "monty.h"
 
 /**
+ * cleaner - cleans stack
+ */
+void cleaner(void)
+{
+	free_dlistint(args.stack);
+	fclose(args.file);
+}
+
+
+/**
  * monty - custom interpretor
  * @args: the argument to be interpreted
  *
  */
-void monty(args_t *args)
+void monty()
 {
-	FILE *file = fopen(args->argv[1], "r");
 	char line[128];
 
-	if (file != NULL)
+	args.file = fopen(args.argv[1], "r");
+	if (args.file != NULL)
 	{
-		while (fgets(line, sizeof(line), file) != NULL)
+		while (fgets(line, sizeof(args.line), args.file) != NULL)
 		{
-			args->counter++;
-			args->line = line;
-			caller(args);
+			args.counter++;
+			args.line = line;
+			caller();
 		}
-		fclose(file);
+		fclose(args.file);
 	}
 	else
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", args->argv[1]);
-		free_dlistint(args->stack);
+		fprintf(stderr, "Error: Can't open file %s\n", args.argv[1]);
+		cleaner();
 		exit(EXIT_FAILURE);
 	}
 }
@@ -32,7 +42,7 @@ void monty(args_t *args)
  * caller - caller
  * @args: arguments passed to function
  */
-void caller(args_t *args)
+void caller()
 {
 	instruction_t ins[] = {
 		{"push", push},
@@ -53,19 +63,19 @@ void caller(args_t *args)
 	int i = 0;
 	char *op = NULL;
 
-	op = strtok(args->line, " \n");
+	op = strtok(args.line, " \n");
 	if (!op || *op == '#')
 		return;
 	while (ins[i].opcode && op)
 	{
 		if (!strcmp(op, ins[i].opcode))
 		{
-			ins[i].f(&(args->stack), args->counter);
+			ins[i].f(&(args.stack), args.counter);
 			return;
 		}
 		i++;
 	}
-	fprintf(stderr, "L%ld: unknown instruction %s\n", args->counter, op);
-	free_dlistint(args->stack);
+	fprintf(stderr, "L%ld: unknown instruction %s\n", args.counter, op);
+	cleaner();
 	exit(EXIT_FAILURE);
 }
