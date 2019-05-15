@@ -11,6 +11,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	if (!*stack)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		free_dlistint(*stack);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
@@ -74,11 +75,13 @@ void pchar(stack_t **stack, unsigned int line_number)
 	if (!*stack)
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		free_dlistint(*stack);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n < 32 || (*stack)->n > 126)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		free_dlistint(*stack);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", (*stack)->n);

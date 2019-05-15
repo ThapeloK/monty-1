@@ -23,6 +23,7 @@ void monty(args_t *args)
 	else
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", args->argv[1]);
+		free_dlistint(args->stack);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -65,5 +66,6 @@ void caller(args_t *args)
 		i++;
 	}
 	fprintf(stderr, "L%ld: unknown instruction %s\n", args->counter, op);
+	free_dlistint(args->stack);
 	exit(EXIT_FAILURE);
 }
