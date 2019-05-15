@@ -38,7 +38,7 @@ void monty(args_t *args)
 			args->line = line;
 			caller(args);
 		}
-		fclose (file);
+	       	fclose (file);
 	}
 	else
 	{
@@ -111,16 +111,15 @@ void pint(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
-	printf("%d\n", (*stack)->n);
+	printf(*stack-n);
 }
 
 
-void pall(stack_t **stack, unsigned int line_number)
-{
-	(void)line_number;
-	print_dlistint(*stack);
-}
+		void pall(stack_t **stack, unsigned int line_number)
+	{
+		(void)line_number;
+		print_dlistint(*stack);
+	}
 
 
 void pop(stack_t **stack, unsigned int line_number)
@@ -259,15 +258,15 @@ void nop(stack_t **stack, unsigned int line_number)
  * @n: data of a node
  * Return: Doubly linked list
  */
-stack_t *add_dnodeint(stack_t **head, const int n)
-{
-	stack_t *new_node = NULL;
+		stack_t *add_dnodeint(stack_t **head, const int n)
+		{
+			stack_t *new_node = NULL;
 
-	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+			new_node = malloc(sizeof(stack_t));
+			if (!new_node)
+			{
+				fprintf(stderr, "Error: malloc failed\n");
+				exit(EXIT_FAILURE);
 	}
 	new_node->n = n;
 	new_node->prev = NULL;
