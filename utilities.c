@@ -6,7 +6,8 @@
 void cleaner(void)
 {
 	free_dlistint(args.stack);
-	fclose(args.file);
+	if (args.file)
+		fclose(args.file);
 }
 
 
