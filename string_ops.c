@@ -19,7 +19,7 @@ void pint(stack_t **stack, unsigned int line_number)
 /**
  * check_string - verify if argument is alpha
  * @s: string passed to function
- * Return - integer
+ * Return: integer
  */
 int check_string(char *s)
 {
