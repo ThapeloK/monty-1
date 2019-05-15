@@ -2,6 +2,8 @@
 
 /**
  * main - entry point
+ * @argc: number of arguments
+ * @argv: array of argc
  * Return: 0 or 1
  */
 int main(int argc, char **argv)
