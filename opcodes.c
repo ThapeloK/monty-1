@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * push - adds data to top of stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	char *param = strtok(NULL, " \n");
@@ -12,8 +18,8 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	n = atoi(param);
 
-	*stack = add_dnodeint(stack, n);
-}
+	 *stack = add_dnodeint(stack, n);
+ }
 
 void pop(stack_t **stack, unsigned int line_number)
 {
