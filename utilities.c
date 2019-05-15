@@ -59,7 +59,8 @@ void caller(args_t *args)
 	{
 		if (!strcmp(op, ins[i].opcode))
 		{
-			return (ins[i].f(&(args->stack), args->counter));
+			ins[i].f(&(args->stack), args->counter);
+			return;
 		}
 		i++;
 	}

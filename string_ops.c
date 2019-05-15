@@ -25,6 +25,10 @@ int check_string(char *s)
 {
 	int i = 0;
 
+	if (!s)
+	{
+		return (-1);
+	}
 	while (s[i])
 	{
 		if (s[i] >= '0' && s[i] <= '9')
