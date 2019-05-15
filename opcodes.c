@@ -69,6 +69,12 @@ void nop(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 }
 
+/**
+ * pall - prints everything in stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void pall(stack_t **stack, unsigned int line_number)
 {
 		(void)line_number;
