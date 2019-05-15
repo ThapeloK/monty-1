@@ -37,11 +37,11 @@ int check_string(char *s)
 	return (1);
 }
 
+
 /**
  * pstr - prints string
  * @stack: doubly linked list
  * @line_number: the line
- *
  */
 void pstr(stack_t **stack, unsigned int line_number)
 {
