@@ -19,8 +19,14 @@ void push(stack_t **stack, unsigned int line_number)
 	n = atoi(param);
 
 	 *stack = add_dnodeint(stack, n);
- }
+}
 
+/**
+ * pop - uses LIFO to pull from stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void pop(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack)
