@@ -51,6 +51,12 @@ void mul(stack_t **stack, unsigned int line_number)
 	delete_dnodeint_at_index(stack, 0);
 }
 
+/**
+ * divide - divdid top 2 in stack
+ * @stack: doubly linked list
+ * @line_number: the line
+ *
+ */
 void divide(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack || !(*stack)->next)
