@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 	args.line = NULL;
 	args.stack = NULL;
 	args.file = NULL;
+	args.order = 1;
 	monty();
 	free_dlistint(args.stack);
 	return (EXIT_SUCCESS);

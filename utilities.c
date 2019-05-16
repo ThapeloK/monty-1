@@ -59,6 +59,8 @@ void caller(void)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"queue", queue},
+		{"stack", stack},
 		{NULL, NULL}
 	};
 	int i = 0;

@@ -4,7 +4,6 @@
  * push - adds data to top of stack
  * @stack: doubly linked list
  * @line_number: the line
- *
  */
 void push(stack_t **stack, unsigned int line_number)
 {
@@ -18,7 +17,10 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(param);
-	*stack = add_dnodeint(stack, n);
+	if (args.order == 1)
+		add_dnodeint(stack, n);
+	else
+		add_dnodeint_end(stack, n);
 }
 
 /**
