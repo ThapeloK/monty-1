@@ -1,6 +1,32 @@
 #include "monty.h"
 
 /**
+ * rotr - rotates stack to the bottom
+ * @stack: doubly linked list
+ * @line_number: the line
+ */
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	int a = 0, counter = 0;
+	stack_t *temp = *stack;
+
+	(void) line_number;
+	if (*stack && (*stack)->next)
+	{
+		while (temp)
+		{
+			if (!temp->next)
+				a = temp->n;
+			counter++;
+			temp = temp->next;
+		}
+		add_dnodeint(stack, a);
+		delete_dnodeint_at_index(stack, counter);
+	}
+}
+
+
+/**
  * pint - prints out everything in stack
  * @stack: doubly linked list
  * @line_number: the line
