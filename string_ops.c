@@ -57,15 +57,12 @@ void pstr(stack_t **stack, unsigned int line_number)
 	stack_t *temp = *stack;
 
 	(void) line_number;
-	if (!*stack)
-	{
-		printf("\n");
-	}
-	else if (temp || (temp->n >= 32 && temp->n > 126) || temp->n)
+	while (temp && (temp->n >= 32 && temp->n <= 126))
 	{
 		printf("%c", temp->n);
 		temp = temp->next;
 	}
+	printf("\n");
 }
 
 /**
@@ -82,7 +79,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		cleaner();
 		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->n < 32 || (*stack)->n > 126)
+	if ((*stack)->n < 0 || (*stack)->n > 127)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		cleaner();
