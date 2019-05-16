@@ -30,6 +30,10 @@ int check_string(char *s)
 	{
 		return (-1);
 	}
+	if (*s == '-')
+	{
+		s++;
+	}
 	while (s[i])
 	{
 		if (s[i] >= '0' && s[i] <= '9')

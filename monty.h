@@ -79,6 +79,6 @@ size_t stack_size(const stack_t *h);
 int check_string(char *s);
 
 
-args_t args;
+extern args_t args;
 
 #endif /*__MONTY__*/
